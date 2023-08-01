@@ -58,6 +58,7 @@ def predict():
     normalized_rain = normalized_data[0][4]
     normalized_humid = normalized_data[0][5]
     normalized_ph = normalized_data[0][6]
+    
 
 
     # prediction = m.predict(
