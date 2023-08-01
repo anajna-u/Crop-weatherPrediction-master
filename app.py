@@ -1,7 +1,7 @@
 from flask import Flask, url_for
 from flask import request, render_template
 # from flask_cors import cross_origin
-import pickle
+# import pickle
 import pandas as pd
 import sklearn
 import logging
