@@ -19,7 +19,7 @@ app = Flask(__name__)
 @app.route("/")
 # @cross_origin()
 def home():
-    return render_template('home.html', value="shreyas")
+    return render_template('home.html')
 
 
 @app.route("/generate")
@@ -35,30 +35,13 @@ def generate():
 def predict():
     # TODO: Normalise the parameters
 
-    tmp = float((request.form["temp"])/44.0000)
-    fert_nit = float((request.form["nitro"])/140.0000)
-    fert_pot = float((request.form["pot"])/205.0000)
-    fert_phos = float((request.form["phos"])/145.0000)
-    rain = float((request.form["rain"])/298.5600)
-    humid = float((request.form["hum"])/99.9818)
-    ph = float((request.form["ph"])/9.9300)
-
-
-
-
-    # data = [[tmp, fert_nit, fert_pot, fert_phos, rain, humid, ph]]
-    # scaler=MinMaxScaler()
-    # normalized_data = scaler.fit_transform(data)
-
-    # normalized_data = scaler.fit_transform(data)
-    # normalized_tmp = normalized_data[0][0]
-    # normalized_fert_nit = normalized_data[0][1]
-    # normalized_fert_pot = normalized_data[0][2]
-    # normalized_fert_phos = normalized_data[0][3]
-    # normalized_rain = normalized_data[0][4]
-    # normalized_humid = normalized_data[0][5]
-    # normalized_ph = normalized_data[0][6]
-    
+    tmp = float(request.form["temp"])/44.00
+    fert_nit = float(request.form["nitro"])/140.00
+    fert_pot = float(request.form["pot"])/205.00
+    fert_phos = float(request.form["phos"])/145.00
+    rain = float(request.form["rain"])/298.56
+    humid = float(request.form["hum"])/99.98
+    ph = float(request.form["ph"])/9.93
 
 
     prediction = m.predict(
